@@ -1,0 +1,74 @@
+{{ $item := .item }}
+{{ $widget := .widget }}
+{{ $link := .link }}
+{{ $target := .target }}
+{{ $has_attachments := partial "functions/has_attachments" $item }}
+
+{{/* Get summary. */}}
+{{ $summary := "" }}
+{{ if $item.Params.summary }}
+{{ $summary = $item.Params.summary | markdownify | emojify }}
+{{ else if .Params.abstract }}
+{{ $summary = .Params.abstract | markdownify | emojify | truncate (site.Params.abstract_length | default 135) }}
+{{ else if $item.Summary }}
+{{ $summary = $item.Summary }}
+{{ end }}
+
+{{ $resource := ($item.Resources.ByType "image").GetMatch "*featured*" }}
+{{ $js_tag_classes := delimit (apply (apply $item.Params.tags "replace" "." " " "-") "printf" "js-id-%s" ".") " " }}
+
+
+<div class="project-card project-item isotope-item {{ $js_tag_classes | safeHTMLAttr }}">
+  <div class="card shadow-sm rounded-0">
+    {{ $resource := ($item.Resources.ByType "image").GetMatch "*featured*" }}
+    {{ $anchor := $item.Params.image.focal_point | default "Smart" }}
+    {{ with $resource }}
+    {{ $image := .Fill (printf "808x455 webp %s" $anchor) }}
+    <a href="{{ $link }}" {{ $target | safeHTMLAttr }}>
+      <div class="img-hover-zoom">
+        <img src="{{ $image.RelPermalink }}" height="{{ $image.Height }}" width="{{ $image.Width }}"
+          class="article-banner" alt="{{ $item.Title }}" loading="lazy">
+      </div>
+    </a>
+    {{end}}
+
+    <div class="card-text">
+      <a href="{{ $link }}" class="card-title" {{ $target | safeHTMLAttr }}>{{ $item.Title | markdownify | emojify}}</a>
+
+      {{ with $summary }}
+      <div class="article-style">
+        <p style="font-size: 0.9rem;">{{ . }}</p>
+      </div>
+      {{ end }}
+
+      {{ if $has_attachments }}
+      <div class="btn-links">
+        {{ partial "page_links" (dict "page" $item "is_list" 1) }}
+      </div>
+      {{ end }}
+
+      {{ $taxonomy := "categories" }}
+      {{ if $item.Param $taxonomy }}
+      <div class="card-categories">
+        <i class="fas fa-folder mr-1"></i>
+        {{- range $index, $value := ($item.GetTerms $taxonomy) -}}
+        {{- if gt $index 0 }}, {{ end -}}
+        <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+        {{- end -}}
+      </div>
+      {{ end }}
+
+
+      {{ $taxonomy := "tags" }}
+      {{ if $item.Param $taxonomy }}
+      <div class="card-tags">
+        {{- range $index, $value := ($item.GetTerms $taxonomy) -}}
+        <a class="badge badge-light" href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+        {{- end -}}
+      </div>
+      {{ end }}
+
+
+    </div>
+  </div>
+</div>

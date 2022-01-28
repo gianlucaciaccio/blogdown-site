@@ -1,0 +1,23 @@
+{{- define "main" -}}
+
+{{ partial "page_header.html" . }}
+
+<div class="universal-wrapper">
+  {{ with .Content }}
+    <div class="article-style">{{ . }}</div>
+  {{ end }}
+
+  <ul class="fa-ul categories-ul">
+    {{ $categories := $.Site.Taxonomies.categories.ByCount  }}
+    {{ range $categories }}
+    {{ if .Term }}
+    {{ $categoryURL := printf "category/%s" .Term | relURL }}
+      <li class="categories-li"><span class="fa-li"><i class="fas fa-folder"></i></span><a href="{{ $categoryURL }}">{{ .Term }}</a> ({{ .Count }})</li>
+    {{ end }}
+    {{ end }}
+  </ul>
+
+  {{ partial "pagination" . }}
+</div>
+
+{{- end -}}
