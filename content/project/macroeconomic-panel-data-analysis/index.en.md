@@ -29,7 +29,7 @@ Life insurance has seen a rapid development in recent years, becoming one of the
 
 In this context, where the concept of risk and uncertainty are on the agenda, the insurance sector is one of the driving forces behind the construction of an effective welfare system that aims to improve collective wellbeing by offering services that meet the new needs of families and businesses.  From this point of view, it is clear how much insurance activity can have a positive effect on consumption and consequently on a country's economic growth.
 
-For these reasons, the aim of this work is to investigate the main factors that have determined its growth, focusing on the European market. In order to get a more comprehensive picture of the relationships, endogenous and exogenous, that macroeconomic and demographic variables may have had in the short and long run within and across countries, it was decided to use a panel data approach.
+For these reasons, the aim of this work is to investigate the main factors that have determined its growth, focusing on the European market. In order to get a more comprehensive picture of the relationships, endogenous and exogenous, that macroeconomic and demographic variables may have had in the short and long run within and across countries, it was decided to use a [panel data](https://en.wikipedia.org/wiki/Panel_analysis) approach.
 
 
 ## About the project
@@ -42,13 +42,13 @@ The study was structured as follows:
 
 - Unit root and cross sectional dependence tests to avoid spurious regressions.
 
-- Correlation analysis to avoid *multicollinearity* problems and information redundancy in model specification.
+- Correlation analysis to avoid [*multicollinearity*](https://en.wikipedia.org/wiki/Multicollinearity) problems and information redundancy in model specification.
 
 - Variable and model selection in a static relationship approach. The final model is based on the choice of the best specification between fixed effects, random effects, the pooled OLS and the first difference model.
 
-- Causality analysis to test the possible endogenous relationship between GDP and life insurance premiums using the *instrumental variables* method.
+- Causality analysis to test the possible endogenous relationship between GDP and life insurance premiums using the [*instrumental variables*](https://en.wikipedia.org/wiki/Instrumental_variables_estimation) method.
 
-- Variable and model selection in a dynamic relationship approach (short-run and long-run effects) and under the assumption of endogeneity, using the *generalised method of moments* (GMM).
+- Variable and model selection in a dynamic relationship approach (short-run and long-run effects) and under the assumption of endogeneity, using the [*generalized method of moments*](https://en.wikipedia.org/wiki/Generalized_method_of_moments) (GMM).
 
 - Conclusion
 

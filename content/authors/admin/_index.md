@@ -1,5 +1,5 @@
 ---
-bio: I like analysing data, getting useful information from them to answer business questions.
+bio: I like analyzing data, getting useful information from them to answer business questions.
 #education:
 #  courses:
 #  - course: PhD in Artificial Intelligence

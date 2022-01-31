@@ -36,7 +36,7 @@ This project aims to analyze the solvency of companies in the Italian general me
 
 
 ## About the proect
-The analysis was performed in R using machine learning methods for classification (logistic regression and linear discriminant analysis), dimensionality reduction (principal component analysis) and model selection (stepwise). 
+The analysis was performed in R using machine learning methods for classification ([logistic regression](https://en.wikipedia.org/wiki/Logistic_regression) and [linear discriminant analysis](https://en.wikipedia.org/wiki/Linear_discriminant_analysis)), dimensionality reduction ([principal component analysis](https://en.wikipedia.org/wiki/Principal_component_analysis)) and model selection ([stepwise](https://en.wikipedia.org/wiki/Stepwise_regression)). 
 
 The data used come from the database [AIDA](https://www.bvdinfo.com/it-it/le-nostre-soluzioni/dati/nazionali/aida) (Analisi Informatizzata delle Aziende Italiane) offered by [Bureau van Dijk](https://www.bvdinfo.com/en-gb/), which collects information on Italian companies, classified by sector and geographical area.
 

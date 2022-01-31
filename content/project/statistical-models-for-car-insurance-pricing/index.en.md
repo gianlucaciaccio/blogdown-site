@@ -26,7 +26,7 @@ toc: true
 ## Introduction
 
 In the insurance sector, contracting and pricing policy is oriented towards the pursuit of the mutual principle, whereby the insurance company diversifies risks (the different policies) by grouping them into homogeneous classes.
-The purpose of this class subdivision is to even out the differences between the different categories of customers in relation to their insured risk, so that the insurance company is better able to cope with the occurrence of damaging events and thus to pay the compensation due.
+The purpose of this classification is to even out the differences between the different categories of customers in relation to their insured risk, so that the insurance company is better able to cope with the occurrence of damaging events and thus to pay the compensation due.
 Thus, the basic idea of class pricing is to make the individual insured contribute to the overall riskiness of the insurer's portfolio in an appropriate and efficient manner.
 
 The estimate of the pure premium, net of any expense loading, is determined in relation to the company's expected loss on a certain insured risk:
@@ -55,7 +55,7 @@ The analysis is developed entirely in R using data available in the `CASdatasets
 The project is structured as follows:
 - Importing data  
 - Descriptive analysis, detection of outliers and creation of variables for frequency and severity model estimation
-- Estimation and choice of model for claims frequency using a GLM approach with Poisson distribution and a “log“ link function 
+- Estimation and choice of model for claims frequency using a [GLM](https://en.wikipedia.org/wiki/Generalized_linear_model) approach with Poisson distribution and a “log“ link function 
 - Estimation and choice of model for severity using a GLM approach with Gamma distribution and a “log“ link function
 - Pure premium estimation and creation of tariff classes
 - Conclusion
